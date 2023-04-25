@@ -1,4 +1,4 @@
-module github.com/moov-io/imagecashletter
+module github.com/will-rodriguez/imagecashletter
 
 go 1.19
 
