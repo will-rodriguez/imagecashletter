@@ -293,6 +293,7 @@ func (r *Reader) parseLine() error { //nolint:gocyclo
 		r.currentCashLetter.AddRoutingNumberSummary(r.currentCashLetter.currentRoutingNumberSummary)
 		r.currentCashLetter.currentRoutingNumberSummary = new(RoutingNumberSummary)
 	case cashLetterControlPos, cashLetterControlEbcPos:
+		print("dafdfsdf")
 		// This is needed for validation od CashLetterControl since SettlementDate
 		// is a conditional field and is only available for certain types of CashLetters.
 		header := r.currentCashLetter.CashLetterHeader
@@ -302,7 +303,6 @@ func (r *Reader) parseLine() error { //nolint:gocyclo
 		if err := r.parseCashLetterControl(header.CollectionTypeIndicator); err != nil {
 			return err
 		}
-		print("dafdfsdf")
 		// if err := r.currentCashLetter.Validate(); err != nil {
 		// 	r.recordName = "CashLetters"
 		// 	return r.error(err)
