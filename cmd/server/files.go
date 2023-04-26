@@ -135,7 +135,6 @@ func createFile(logger log.Logger, repo ICLFileRepository) http.HandlerFunc {
 				imagecashletter.BufferSizeOption(maxReaderBufferSize),
 			}
 			f, err := imagecashletter.NewReader(reader, opts...).Read()
-			print("files.go newReader")
 			if err != nil {
 				err = logger.LogErrorf("error reading image cache letter: %v", err).Err()
 				moovhttp.Problem(w, err)

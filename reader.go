@@ -77,6 +77,7 @@ func (r *Reader) addCurrentRoutingNumberSummary(rns *RoutingNumberSummary) {
 
 // NewReader returns a new ACH Reader that reads from r.
 func NewReader(r io.Reader, opts ...ReaderOption) *Reader {
+	print("reader.go newReader")
 	f := NewFile()
 	f.Control = FileControl{}
 	reader := &Reader{
