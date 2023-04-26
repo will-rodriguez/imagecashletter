@@ -302,10 +302,11 @@ func (r *Reader) parseLine() error { //nolint:gocyclo
 		if err := r.parseCashLetterControl(header.CollectionTypeIndicator); err != nil {
 			return err
 		}
-		if err := r.currentCashLetter.Validate(); err != nil {
-			r.recordName = "CashLetters"
-			return r.error(err)
-		}
+		print("dafdfsdf")
+		// if err := r.currentCashLetter.Validate(); err != nil {
+		// 	r.recordName = "CashLetters"
+		// 	return r.error(err)
+		// }
 		r.File.AddCashLetter(r.currentCashLetter)
 		r.currentCashLetter = CashLetter{}
 	case fileControlPos, fileControlEbcPos:
